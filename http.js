@@ -1,16 +1,18 @@
-const request = require("request")
+const axios = require("axios")
 
 module.exports = function(host, endpoint, method, body, headers) {
 	return new Promise(function(resolve, reject) {
-		request({
-			url: "https://" + host + "/" + endpoint,
+		axios({
+			url: `https://${host}/${endpoint}`,
 			method,
-			json: true,
-			body,
+			data: body,
 			headers
-		}, (error, response, body) => {
-			if (error) return reject(error)
-			resolve(body)
 		})
-	})
+			.then(response => {
+				resolve(response.data);
+			})
+			.catch(error => {
+				reject(error);
+			});
+	});
 }
