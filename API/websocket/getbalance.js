@@ -1,10 +1,10 @@
 module.exports = function(type) {
 	return new Promise((resolve, reject) => {
-		if (["PRACTICE", "REAL"].indexOf(type) == -1)
-			return reject("Invalid asset.")
+		if (['PRACTICE', 'REAL'].indexOf(type) == -1)
+			return reject('Invalid asset.')
 
-		const id = this.WebSocket.send("sendMessage", {
-			name: "get-balances",
+		const id = this.WebSocket.send('sendMessage', {
+			name: 'get-balances',
 			version: "1.0",
 			body: {
 				types_ids: [1, 4, 2],

@@ -1,4 +1,4 @@
-const getExpiration = require("../getexpiration")
+const getExpiration = require('../getexpiration')
 
 module.exports = function() {
 	return new Promise((resolve, reject) => {
@@ -11,9 +11,9 @@ module.exports = function() {
 
 		const expiration = getExpiration(this.API.serverTimestamp, duration, 0)
 
-		const id = this.API.WebSocket.send("sendMessage", {
-			name: "binary-options.open-option",
-			version: "1.0",
+		const id = this.API.WebSocket.send('sendMessage', {
+			name: 'binary-options.open-option',
+			version: '1.0',
 			body: {
 				user_balance_id: this.API.balance.id,
 				active_id: this.API.actives[active],
@@ -29,10 +29,10 @@ module.exports = function() {
 
 		const callback = message => {
 			if (message.request_id == id) {
-				this.API.WebSocket.emitter.removeListener("option", callback)
+				this.API.WebSocket.emitter.removeListener('option', callback)
 				if (message.status != 2000) return reject(message.msg)
 				return resolve({
-					status: "open",
+					status: 'open',
 					win: null,
 					id: message.msg.id,
 					created: this.API.serverTimestamp,
@@ -41,6 +41,6 @@ module.exports = function() {
 			}
 		}
 
-		this.API.WebSocket.getMessage("option", callback)
+		this.API.WebSocket.getMessage('option', callback)
 	})
 }

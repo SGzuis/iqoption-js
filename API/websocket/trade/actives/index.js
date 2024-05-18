@@ -1,4 +1,4 @@
 module.exports = {
-	Binary: require("./binary"),
-	Digital: require("./digital")
+	Binary: require('./binary'),
+	Digital: require('./digital')
 }

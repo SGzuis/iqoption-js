@@ -1,18 +1,18 @@
-const Settings = require("../../settings")
+const Settings = require('../../settings')
 
 module.exports = async function(email, password) {
 	const {
 		code,
 		message,
 		ssid
-	} = await this.Http(Settings.API.URL.auth, "api/v2/login", "POST", {
+	} = await this.Http(Settings.API.URL.auth, 'api/v2/login', 'POST', {
 		identifier: email,
 		password
 	}, {
-		Cookie: "lang=pt_PT"
+		Cookie: 'lang=pt_PT'
 	})
 
-	if (code !== "success")
+	if (code !== 'success')
 		throw new Error(message)
 
 	this.ssid = ssid

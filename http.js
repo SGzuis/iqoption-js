@@ -1,4 +1,4 @@
-const axios = require("axios")
+const axios = require('axios')
 
 module.exports = function(host, endpoint, method, body, headers) {
 	return new Promise(function(resolve, reject) {
