@@ -74,6 +74,7 @@ describe('API Tests', function() {
         assert.strictEqual(typeof trade.quote.created, 'number');
         assert.strictEqual(typeof trade.quote.expire, 'number');
         assert.strictEqual(typeof trade.quote.price, 'number');
+        assert.strictEqual(typeof trade.quote.profit_percent, 'number');
         assert.strictEqual(trade.quote.profit_gross, 0);
         assert.strictEqual(trade.quote.profit_net, 0);
       } catch (error) {
@@ -95,6 +96,7 @@ describe('API Tests', function() {
         assert.strictEqual(typeof trade.quote.created, 'number');
         assert.strictEqual(typeof trade.quote.expire, 'number');
         assert.strictEqual(typeof trade.quote.price, 'number');
+        assert.strictEqual(typeof trade.quote.profit_percent, 'number');
         assert.strictEqual(typeof trade.quote.profit_gross, 'number');
         assert.strictEqual(typeof trade.quote.profit_net, 'number');
       } catch (error) {
