@@ -42,7 +42,7 @@ module.exports = function() {
 					created: this.API.serverTimestamp,
 					expire: expiration.getTime(),
           price: message.msg.price,
-          profit_percent: message.msg.raw_event.profit_percent - 100,
+          profit_percent: message.msg.profit_income - 100,
           profit_gross: 0,
           profit_net: 0
 				})
