@@ -20,10 +20,14 @@
   },
   "homepage": "https://github.com/SGzuis/iqoption-js#readme",
   "scripts": {
-    "test": "npm index.js"
+    "test": "mocha"
   },
   "keywords": [
     "iqoption",
     "api"
-  ]
+  ],
+  "devDependencies": {
+    "dotenv": "^16.4.5",
+    "mocha": "^10.4.0"
+  }
 }
