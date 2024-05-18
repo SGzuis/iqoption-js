@@ -12,7 +12,7 @@ module.exports = async function(email, password) {
 		Cookie: "lang=pt_PT"
 	})
 
-	if (code != "success")
+	if (code !== "success")
 		throw new Error(message)
 
 	this.ssid = ssid

@@ -18,9 +18,9 @@ function trade(API, options) {
 			return reject("(trade) Invalid type.")
 
 		try {
-			if (this.options.type == "BINARY") {
+			if (this.options.type === "BINARY") {
 				this.quote = await Binary.call(this)
-			} else if (this.options.type == "DIGITAL") {
+			} else if (this.options.type === "DIGITAL") {
 				this.quote = await Digital.call(this)
 			}
 		} catch(error) {

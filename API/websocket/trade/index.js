@@ -1,5 +1,5 @@
-const trade = require("./trade")
+const Trade = require("./trade")
 
 module.exports = function(options) {
-	return new trade(this, options)
+	return new Trade(this, options)
 }

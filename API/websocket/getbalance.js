@@ -15,7 +15,7 @@ module.exports = function(type) {
 		const callback = message => {
 			if (message.request_id == id) {
 				this.WebSocket.emitter.removeListener("balances", callback)
-				return resolve(message.msg.find(balance => type == "REAL" && balance.type == 1 || type == "PRACTICE" && balance.type == 4))
+				return resolve(message.msg.find(balance => type === "REAL" && balance.type == 1 || type === "PRACTICE" && balance.type == 4))
 			}
 		}
 
