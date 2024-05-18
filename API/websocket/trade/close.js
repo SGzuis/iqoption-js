@@ -13,6 +13,11 @@ module.exports = function() {
 
 				this.quote.win = ((open_quote < close_quote) && action === 'CALL') || ((open_quote > close_quote) && action === 'PUT')
 				this.quote.status = 'closed'
+        if (this.quote.win) {
+          this.quote.profit_amount = message.msg.profit_amount
+          this.quote.profit_net = message.msg.profit_amount - message.msg.enrolled_amount
+        }
+
 				return resolve(message.msg)
 			}
 		}

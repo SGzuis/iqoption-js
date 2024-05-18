@@ -36,7 +36,10 @@ module.exports = function() {
 					win: null,
 					id: message.msg.id,
 					created: this.API.serverTimestamp,
-					expire: expiration.getTime()
+					expire: expiration.getTime(),
+          price: message.msg.price,
+          profit_gross: 0,
+          profit_net: 0
 				})
 			}
 		}
