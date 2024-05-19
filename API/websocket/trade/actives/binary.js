@@ -31,7 +31,6 @@ module.exports = function() {
 			if (message.request_id == id) {
 				this.API.WebSocket.emitter.removeListener('option', callback)
 				if (message.status != 2000) return reject(message.msg)
-        console.log(message);
 				return resolve({
 					status: 'open',
 					win: null,
